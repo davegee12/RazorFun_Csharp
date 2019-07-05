@@ -1,0 +1,42 @@
+<!Doctype html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <link rel="stylesheet" href="~/css/style.css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Razor Fun!</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>Here are some delicious foods!</h1>
+            </div>
+            <div class="row">
+                @{
+                    List<string> StringList = new List<string>
+                    {
+                        "Apple Pie",
+                        "Burritos",
+                        "Clams Casino",
+                        "Donuts"
+                    };
+
+                    foreach(var word in StringList)
+                    {
+                        string letter = word[0].ToString();
+                        <div>
+                            @if(letter == "C")
+                            {
+                                <p style="color: red;">@word <br> </p>
+                            }
+                            else
+                            {
+                                <p>@word <br> </p>
+                            }
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </body>
+</html>
